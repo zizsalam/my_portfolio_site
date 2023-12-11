@@ -3,3 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 //= require turbolinks
 //= require rails-ujs
+import "bootstrap"
+import "@popperjs/core"

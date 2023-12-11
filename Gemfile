@@ -3,6 +3,10 @@ source "https://rubygems.org"
 ruby "3.1.2"
  gem 'sassc'
 
+ gem "bootstrap", "~> 5.2"
+gem "simple_form"
+gem "sassc-rails"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
 
@@ -26,6 +30,7 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
