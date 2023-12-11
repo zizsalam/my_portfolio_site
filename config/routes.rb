@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'homepage/home'
   get '/articles', to: 'articles#index', as: 'articles'
   get '/contact', to: 'static_pages#contact'
-  get '/article_show/:id', to: 'articles#show', as: 'article_show'
-
+  resources :articles
+  resources :posts
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
