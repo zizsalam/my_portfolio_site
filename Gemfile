@@ -6,6 +6,7 @@ ruby "3.1.2"
  gem "bootstrap", "~> 5.2"
 gem "simple_form"
 gem "sassc-rails"
+gem "friendly_id"
 
 group :production do
   gem 'pg'

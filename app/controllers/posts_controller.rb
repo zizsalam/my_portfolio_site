@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-
+    @posts = Post.all.order('created_at desc')
   end
 
   def new
@@ -37,9 +37,7 @@ class PostsController < ApplicationController
     #end
   end
 
-  def index
-    @post = Post.new
-  end
+
 
   def destroy
     @post = Post.find(params[:id])
