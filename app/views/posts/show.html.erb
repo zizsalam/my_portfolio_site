@@ -8,7 +8,7 @@ skinny_wrapper wrapper_padding">
   </header>
 
   <div id="content">
-  <%= @post.content %>
+  <%= simple_format @post.content %>
   </div>
 
   <hr>
@@ -23,3 +23,5 @@ skinny_wrapper wrapper_padding">
   <hr>
 
 </div>
+
+<%= link_to "Edit", edit_post_path(@post) %>
