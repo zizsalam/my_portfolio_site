@@ -7,6 +7,7 @@ ruby "3.1.2"
 gem "simple_form"
 gem "sassc-rails"
 gem "friendly_id"
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 group :production do
   gem 'pg'
