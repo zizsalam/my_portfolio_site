@@ -13,14 +13,6 @@
 </head>
 <body>
 
-<header id="main_navigation" class="clearfix">
-  <a href="#" class="name">Abdoul Kane</a>
-  <nav>
-    <a href="<%= articles_path %>">Articles</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
 
 <div class="wrapper clearfix wrapper_padding "> <!-- Move the wrapper inside the body and correct the class -->
   <div class="col-1 about homepage_content"> <!-- Remove the dot before the class name -->
@@ -33,8 +25,11 @@
   <div class="col-2 homepage_content">
   <h2>Stuff I've Written</h2>
   <hr>
-  <h3><a href="#">The Do list</a></h3>
-  <p classe="date">Monday, December 4th</p>
+  <%  @posts.each do |post| %>
+       <h3><a href="#"><%= link_to post.title, post %></a></h3>
+        <p classe="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+  <% end %>
+
   <h3><a href="#">How do I learn programming?</a></h3>
   <p classe="date">Monday, December 4th</p>
    <h3><a href="#">Strive for the uncomfortable</a></h3>
@@ -52,15 +47,7 @@
   </div>
 </div>
 
-<footer id="main_footer">
-<p class="copyright">&copy; 2023
-Abdoul Kane</p>
-<nav>
-  <a href="https://github.com/zizsalam" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-  <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-  <a href="https://medium.com/@kaneaziz" target="_blank"><i class="fa-brands fa-medium"></i></a>
-</nav>
-</footer>
+
 
 </body>
 
