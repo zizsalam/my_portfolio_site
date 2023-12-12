@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   resources :articles
   resources :posts
+  resources :projects
   root 'homepage#home'  # Adjusted to point to the 'home' action in HomepageController
 
   # ... other routes ...
