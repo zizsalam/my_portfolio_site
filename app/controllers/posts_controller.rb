@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order('created_at desc').paginate(page: params[:page], per_page: 2)
+    @posts = Post.paginate(page: params[:page], per_page: 10) # Adjust per_page as needed
   end
 
   def new
@@ -19,6 +19,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @articles = Post.where.not(id: @post.id).order('created_at DESC').limit(5)
+
   end
 
   def edit
@@ -50,6 +52,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def find_project
+    @post = Post.friendly.find(params[:id])
+  end
 
   private
   def post_params

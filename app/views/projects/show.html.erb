@@ -9,7 +9,16 @@
         <div class="button_wrapper">
           <a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %></a>
         </div>
+
       </div>
+
+  <hr>
+
+  <h2>Other Articles</h2>
+  <% @articles.each do |article| %>
+    <h3><%= link_to article.title, post_path(article) %></h3>
+    <!-- Add more details if needed -->
+  <% end %>
     <% else %>
       <p>Project not found</p>
     <% end %>

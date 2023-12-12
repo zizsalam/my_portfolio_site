@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_232518) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_12_012748) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -23,6 +23,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_232518) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 
   create_table "projects", force: :cascade do |t|
@@ -31,6 +33,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_232518) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_projects_on_slug", unique: true
   end
 
 end
