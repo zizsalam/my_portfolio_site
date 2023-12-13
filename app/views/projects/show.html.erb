@@ -5,20 +5,8 @@
       <h1><%= @project.title %></h1>
       <hr>
       <div id="content">
-        <%= simple_format @project.description %>
-        <div class="button_wrapper">
-          <a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %></a>
-        </div>
-
+        <!-- Your content rendering here -->
       </div>
-
-  <hr>
-
-  <h2>Other Articles</h2>
-  <% @articles.each do |article| %>
-    <h3><%= link_to article.title, post_path(article) %></h3>
-    <!-- Add more details if needed -->
-  <% end %>
     <% else %>
       <p>Project not found</p>
     <% end %>
