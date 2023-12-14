@@ -4,12 +4,7 @@
   <title>Abdoul Kane - Part Service Designer, Part Developer</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
 
-  <link rel="stylesheet" href="css/application.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
-  <link rel="stylesheet" href="css/application.css">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -19,28 +14,25 @@
     <h2>About</h2>
     <hr>
     <p>I am service designer & developer living in Winterthur Switzerland.</p>
-    <p>By day I work as a service designer at Medic, by night contribute on open source and personal design & code rails, javascript, html/css <a href="#">projects</a>.</p>
+    <p>By day I work as a service designer at Medic, by night contribute on open source and personal design & code rails, javascript, html/css <%= link_to "Projects", projects_path %>
+projects</a>.</p>
     <p>You can find me speaking on Twitter, swooshing some pixel on Dribbble, and sharing some code on Github.</p>
   </div>
   <div class="col-2 homepage_content">
   <h2>Stuff I've Written</h2>
   <hr>
   <%  @posts.each do |post| %>
+      <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
        <h3><a href="#"><%= link_to post.title, post %></a></h3>
-        <p classe="date"><%= post.created_at.strftime("%A, %b %d") %></p>
   <% end %>
 
-  <h3><a href="#">How do I learn programming?</a></h3>
-  <p classe="date">Monday, December 4th</p>
-   <h3><a href="#">Strive for the uncomfortable</a></h3>
-  <p classe="date">Monday, December 4th</p>
 </div>
   <div class="col-3 homepage_content">
   <h2>Stuff I've Built</h2>
   <hr>
    <%  @projects.each do |project| %>
+        <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
        <h3><a href="#"><%= link_to project.title, project %></a></h3>
-        < classe="date"><%= project.created_at.strftime("%A, %b %d") %></p>
   <% end %>
   <hr>
   </div>

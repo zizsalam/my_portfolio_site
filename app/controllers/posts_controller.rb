@@ -13,15 +13,15 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_url(@post), notice: "Hello yeah, Abdoul! Your post is successfully saved"
     else
-      render "new", notice: "Oh no, Abdoul! I was unable to save your post."
+      render "new", alert: "Oh no, Abdoul! I was unable to save your post."
     end
   end
 
-  def show
-    @post = Post.find(params[:id])
-    @articles = Post.where.not(id: @post.id).order('created_at DESC').limit(5)
+    def show
+      @post = Post.find_by!(slug: params[:id])
+      @articles = Post.where.not(id: @post.id).order('created_at DESC').limit(5)
+    end
 
-  end
 
   def edit
     @post = Post.find(params[:id])
@@ -30,14 +30,10 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    Post.find(params[:id])
     @post.update(post_params)
-    #if @post.update post_params
-     redirect_to post_path(@post), notice: "Zuuuuuuuuh! Your post was succesfully saved!"
-   # else
-    #  render "edit"
-    #end
+    redirect_to post_path(@post), notice: "Zuuuuuuuuh! Your post was successfully saved!"
   end
+
 
 
 
