@@ -1,16 +1,17 @@
 
 
 
-<div id="post_show_content" class="
+
+<div id="project_show_content"  class="
 skinny_wrapper wrapper_padding">
   <header>
   <p class="date"><% @project.created_at.strftime('%A, %B %d') %></p>
-  <p><%= @project.title %></p>
+  <h1> <%= @project.title %></h1>
   <hr>
   </header>
 
-  <div id="name">
-  <%= simple_format @project.name %>
+  <div id="description">
+  <%= simple_format @project.description %>
   </div>
 
   <hr>
@@ -22,6 +23,8 @@ skinny_wrapper wrapper_padding">
     <a href="https://medium.com/@kaneaziz" target="_blank"><i class="fa-brands fa-medium"></i></a>
   </div>
 
+  <hr>
+<%= link_to "Delete", @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link' %>
 
 
 </div>
