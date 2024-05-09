@@ -15,15 +15,19 @@ class ProjectsController < ApplicationController
     else
       render 'new'
     end
-    def show
-      @project = Project.find_by(id: params[:id])
+  end
 
-      if @project.nil?
-        redirect_to projects_path, alert: "Project not found"
-        return
-      end
+  def show
+    @project = Project.find_by(slug: params[:id])
+    if @project.nil?
+      # Handle the case where the project is not found by redirecting to the root path.
+      redirect_to root_path
+      return
     end
   end
+
+
+
 
   def find_project
     @project = Project.friendly.find(params[:id])

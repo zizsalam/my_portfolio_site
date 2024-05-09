@@ -1,14 +1,27 @@
-<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+
+
+
+<div id="post_show_content" class="
+skinny_wrapper wrapper_padding">
   <header>
-    <% if @project %>
-      <p class="date"><%= @project.created_at.strftime('%A, %B %d') %></p>
-      <h1><%= @project.title %></h1>
-      <hr>
-      <div id="content">
-        <!-- Your content rendering here -->
-      </div>
-    <% else %>
-      <p>Project not found</p>
-    <% end %>
+  <p class="date"><% @project.created_at.strftime('%A, %B %d') %></p>
+  <p><%= @project.title %></p>
+  <hr>
   </header>
+
+  <div id="name">
+  <%= simple_format @project.name %>
+  </div>
+
+  <hr>
+
+  <div id="share_box">
+    <p>Share The Project</p>
+    <a href="https://github.com/zizsalam" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://medium.com/@kaneaziz" target="_blank"><i class="fa-brands fa-medium"></i></a>
+  </div>
+
+
+
 </div>

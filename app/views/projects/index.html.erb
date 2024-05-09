@@ -1,10 +1,26 @@
-<h1 id="page_title">Stuff I've Build</h1>
-<div id="posts_wrapper" class="skinny_wrapper">
+
+<% if @project %>
+  <div class="skinny_wrapper wrapper_padding">
+    <header>
+      <p class="date"><%= @project.created_at.strftime('%A, %B %d') %></p>
+      <p><%= @project.title %></p>
+      <hr>
+    </header>
+    <!-- Other project details here -->
+  </div>
+<% else %>
+  <p>Project not found</p>
+<% end %>
+<h1 id="page_title">Stuff I've Built</h1>
+<div id="projects_wrapper" class="skinny_wrapper">
   <% @projects.each do |project| %>
-    <div class="post">
+    <div class="project">
       <p class="date"><%= project.created_at.strftime("%A, %B %d") %></p>
       <h2><%= link_to project.title, project %></h2>
       <hr>
+   <div id="name">
+  <%= simple_format @project.description %>
+</div>
     </div>
   <% end %>
 </div>
